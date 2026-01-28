@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="pt-BR">
+    <meta name="google" content="notranslate">
+    <title>Minha Página</title>
+    <!-- BUILD_EASY_DATA:eyJlbGVtZW50cyI6W3siaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X2xiZjE1b2h3dSIsInR5cGUiOiJzZWN0aW9uIiwiY29udGVudCI6IiIsInN0eWxlcyI6eyJhbmltYXRpb24iOiJub25lIn0sInNlY3Rpb25EYXRhIjp7ImJhY2tncm91bmRDb2xvciI6IiMwZjBmMWEiLCJwYWRkaW5nVG9wIjoiNDBweCIsInBhZGRpbmdCb3R0b20iOiI0MHB4IiwicGFkZGluZ0xlZnQiOiIyMHB4IiwicGFkZGluZ1JpZ2h0IjoiMjBweCJ9LCJjaGlsZHJlbiI6W3siaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X3Fxa3FpejQwcyIsInR5cGUiOiJoZWFkaW5nIiwiY29udGVudCI6Iltjb3I6I2Y5NzMxNl1USVJFIFNFVSBGSUxITyAgWy9jb3JdW2NvcjojZmZmZl1EQVMgVEVMQVMgQ09NIFJPQsOTVElDQVsvY29yXSIsInN0eWxlcyI6eyJmb250U2l6ZSI6IjMycHgiLCJmb250V2VpZ2h0IjoiNzAwIiwidGV4dENvbG9yIjoiI2ZmZmZmZiIsInRleHRBbGlnbiI6ImNlbnRlciIsInBhZGRpbmciOiIwIDAgMTZweCIsImFuaW1hdGlvbiI6ImZhZGUtaW4ifX0seyJpZCI6ImVsXzE3Njk2MDMyODUyOTZfbWJ0MDhsd24wIiwidHlwZSI6InRleHQiLCJjb250ZW50IjoiRGl2ZXJzw6NvIHF1ZSBlbnNpbmEgZGUgdmVyZGFkZS5cbkNvbSBtYXRlcmlhaXMgc2ltcGxlcyBlIG11aXRhIGNyaWF0aXZpZGFkZSwgc2V1IGZpbGhvIGFwcmVuZGUsIGJyaW5jYSBlIHNlIGRlc2Vudm9sdmUgZGUgZm9ybWEgYXRpdmEgZSBsb25nZSBkYXMgdGVsYXMhIiwic3R5bGVzIjp7ImZvbnRTaXplIjoiMThweCIsImZvbnRXZWlnaHQiOiI0MDAiLCJ0ZXh0Q29sb3IiOiIjYTBhMGEwIiwidGV4dEFsaWduIjoiY2VudGVyIiwicGFkZGluZyI6IjAgMCAyNHB4IiwiYW5pbWF0aW9uIjoiZmFkZS1pbiJ9fSx7ImlkIjoiZWxfMTc2OTYwNTQ1MTA4NV8xYzl2amd5OTMiLCJ0eXBlIjoiaW1hZ2UiLCJjb250ZW50IjoiIiwic3R5bGVzIjp7IndpZHRoIjoiMTAwJSIsImhlaWdodCI6ImF1dG8iLCJib3JkZXJSYWRpdXMiOiI4cHgiLCJhbmltYXRpb24iOiJub25lIn0sInNyYyI6Imh0dHBzOi8vaS5pYmIuY28vQ0s5Zjl3MHEvRGVzaWduLXNlbS1ub21lLTU4LmpwZyJ9LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X2FheWl0eDNmMiIsInR5cGUiOiJzcGFjZXIiLCJjb250ZW50IjoiIiwic3R5bGVzIjp7ImhlaWdodCI6IjI0cHgiLCJhbmltYXRpb24iOiJub25lIn19LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2XzA1OW45bGlhayIsInR5cGUiOiJidXR0b24iLCJjb250ZW50IjoiUVVFUk8gQUNFU1NBUiBBR09SQSIsImhyZWYiOiIjb2ZlcnRhIiwic3R5bGVzIjp7ImZvbnRTaXplIjoiMThweCIsImZvbnRXZWlnaHQiOiI3MDAiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwiYmFja2dyb3VuZENvbG9yIjoiI2MyM2RmZiIsInRleHRBbGlnbiI6ImNlbnRlciIsInBhZGRpbmciOiIxOHB4IDQ4cHgiLCJib3JkZXJSYWRpdXMiOiIxMnB4IiwiYW5pbWF0aW9uIjoicHVsc2UifX1dfSx7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl91aWduMTFsZ2IiLCJ0eXBlIjoic2VjdGlvbiIsImNvbnRlbnQiOiIiLCJzdHlsZXMiOnsiYW5pbWF0aW9uIjoibm9uZSJ9LCJzZWN0aW9uRGF0YSI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjMGYwZjFhIiwicGFkZGluZ1RvcCI6IjQwcHgiLCJwYWRkaW5nQm90dG9tIjoiNDBweCIsInBhZGRpbmdMZWZ0IjoiMjBweCIsInBhZGRpbmdSaWdodCI6IjIwcHgifSwiY2hpbGRyZW4iOlt7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9oMTBpemlsajciLCJ0eXBlIjoiaGVhZGluZyIsImNvbnRlbnQiOiJPIFF1ZSBWb2PDqiBWYWkgUmVjZWJlciIsInN0eWxlcyI6eyJmb250U2l6ZSI6IjI4cHgiLCJmb250V2VpZ2h0IjoiNzAwIiwidGV4dENvbG9yIjoiI2ZmZmZmZiIsInRleHRBbGlnbiI6ImNlbnRlciIsInBhZGRpbmciOiIwIDAgMTlweCIsImFuaW1hdGlvbiI6ImZhZGUtaW4ifX0seyJpZCI6ImVsXzE3Njk2MDMyODUyOTZfZ3Rwa21xdDN0IiwidHlwZSI6ImNhcmQiLCJjb250ZW50IjoiUHJvamV0b3MgZGUgcm9iw7N0aWNhKFIkIDg5KXwiLCJzdHlsZXMiOnsiYmFja2dyb3VuZENvbG9yIjoiIzFlMWUyZSIsInRleHRDb2xvciI6IiNmZmZmZmYiLCJwYWRkaW5nIjoiMjRweCIsImJvcmRlclJhZGl1cyI6IjE2cHgiLCJib3JkZXJDb2xvciI6IiMyYTJhM2UiLCJib3JkZXJXaWR0aCI6IjFweCIsImFuaW1hdGlvbiI6InNsaWRlLXVwIiwiY2FyZEljb24iOiJjaGVjayIsImNhcmRJY29uQ29sb3IiOiIjYTg1NWY3In19LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X3MyZ2dleHN2eiIsInR5cGUiOiJjYXJkIiwiY29udGVudCI6IiBMYW7Dp2FtZW50byBkZSBMRUR8Iiwic3R5bGVzIjp7ImJhY2tncm91bmRDb2xvciI6IiMxZTFlMmUiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjI0cHgiLCJib3JkZXJSYWRpdXMiOiIxNnB4IiwiYm9yZGVyQ29sb3IiOiIjMmEyYTNlIiwiYm9yZGVyV2lkdGgiOiIxcHgiLCJhbmltYXRpb24iOiJzbGlkZS11cCIsImNhcmRJY29uIjoic3RhciIsImNhcmRJY29uQ29sb3IiOiIjYTg1NWY3In19LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2Xzd1MXRpZ2k2eSIsInR5cGUiOiJjYXJkIiwiY29udGVudCI6IlJvYsO0IElsdW1pbmFkb3J8Iiwic3R5bGVzIjp7ImJhY2tncm91bmRDb2xvciI6IiMxZTFlMmUiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjI0cHgiLCJib3JkZXJSYWRpdXMiOiIxNnB4IiwiYm9yZGVyQ29sb3IiOiIjMmEyYTNlIiwiYm9yZGVyV2lkdGgiOiIxcHgiLCJhbmltYXRpb24iOiJzbGlkZS11cCIsImNhcmRJY29uIjoiemFwIiwiY2FyZEljb25Db2xvciI6IiNhODU1ZjcifX0seyJpZCI6ImVsXzE3Njk2MDMyODUyOTZfdjFhZ2djM3Q2IiwidHlwZSI6ImNhcmQiLCJjb250ZW50IjoiUm9iw7QgRGFuw6dhcmlubyBTb2xhcnwiLCJzdHlsZXMiOnsiYmFja2dyb3VuZENvbG9yIjoiIzFlMWUyZSIsInRleHRDb2xvciI6IiNmZmZmZmYiLCJwYWRkaW5nIjoiMjRweCIsImJvcmRlclJhZGl1cyI6IjE2cHgiLCJib3JkZXJDb2xvciI6IiMyYTJhM2UiLCJib3JkZXJXaWR0aCI6IjFweCIsImFuaW1hdGlvbiI6InNsaWRlLXVwIiwiY2FyZEljb24iOiJzaGllbGQiLCJjYXJkSWNvbkNvbG9yIjoiI2E4NTVmNyJ9fSx7ImlkIjoiZWxfMTc2OTYwNjE2MjcyNF80eWRmOGI1dWwiLCJ0eXBlIjoiY2FyZCIsImNvbnRlbnQiOiJDaXJjdWl0byBlbSBzw6lyaWV8Iiwic3R5bGVzIjp7ImJhY2tncm91bmRDb2xvciI6IiMxZTFlMmUiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjI0cHgiLCJib3JkZXJSYWRpdXMiOiIxNnB4IiwiYm9yZGVyQ29sb3IiOiIjMmEyYTNlIiwiYm9yZGVyV2lkdGgiOiIxcHgiLCJhbmltYXRpb24iOiJzbGlkZS11cCIsImNhcmRJY29uIjoic2hpZWxkIiwiY2FyZEljb25Db2xvciI6IiNhODU1ZjcifX0seyJpZCI6ImVsXzE3Njk2MDYzNTA1MzFfZDJhd3R3Z3A0IiwidHlwZSI6ImNhcmQiLCJjb250ZW50IjoiUm9iw7QgSG9tb3BvbGFyfCIsInN0eWxlcyI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjMWUxZTJlIiwidGV4dENvbG9yIjoiI2ZmZmZmZiIsInBhZGRpbmciOiIyNHB4IiwiYm9yZGVyUmFkaXVzIjoiMTZweCIsImJvcmRlckNvbG9yIjoiIzJhMmEzZSIsImJvcmRlcldpZHRoIjoiMXB4IiwiYW5pbWF0aW9uIjoic2xpZGUtdXAiLCJjYXJkSWNvbiI6InNoaWVsZCIsImNhcmRJY29uQ29sb3IiOiIjYTg1NWY3In19LHsiaWQiOiJlbF8xNzY5NjA2MzY1Mzk1X3FxeGZleXJkdSIsInR5cGUiOiJjYXJkIiwiY29udGVudCI6IiArNTAgcHJvamV0b3MgZWR1Y2F0aXZvcyBraWRzIXwiLCJzdHlsZXMiOnsiYmFja2dyb3VuZENvbG9yIjoiIzFlMWUyZSIsInRleHRDb2xvciI6IiNmZmZmZmYiLCJwYWRkaW5nIjoiMjRweCIsImJvcmRlclJhZGl1cyI6IjE2cHgiLCJib3JkZXJDb2xvciI6IiMyYTJhM2UiLCJib3JkZXJXaWR0aCI6IjFweCIsImFuaW1hdGlvbiI6InNsaWRlLXVwIiwiY2FyZEljb24iOiJzaGllbGQiLCJjYXJkSWNvbkNvbG9yIjoiI2E4NTVmNyJ9fSx7ImlkIjoiZWxfMTc2OTYwNjM4MDQyOF9rd2hhanlwZzYiLCJ0eXBlIjoiY2FyZCIsImNvbnRlbnQiOiJFIG11aXRvIG1haXMuLi58Iiwic3R5bGVzIjp7ImJhY2tncm91bmRDb2xvciI6IiMxZTFlMmUiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjI0cHgiLCJib3JkZXJSYWRpdXMiOiIxNnB4IiwiYm9yZGVyQ29sb3IiOiIjMmEyYTNlIiwiYm9yZGVyV2lkdGgiOiIxcHgiLCJhbmltYXRpb24iOiJzbGlkZS11cCIsImNhcmRJY29uIjoic2hpZWxkIiwiY2FyZEljb25Db2xvciI6IiNhODU1ZjcifX1dfSx7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9nNGE4cnpscTUiLCJ0eXBlIjoic2VjdGlvbiIsImNvbnRlbnQiOiIiLCJzdHlsZXMiOnsiYW5pbWF0aW9uIjoibm9uZSJ9LCJzZWN0aW9uRGF0YSI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjMGYwZjFhIiwicGFkZGluZ1RvcCI6IjQwcHgiLCJwYWRkaW5nQm90dG9tIjoiNDBweCIsInBhZGRpbmdMZWZ0IjoiMjBweCIsInBhZGRpbmdSaWdodCI6IjIwcHgifSwiY2hpbGRyZW4iOlt7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9sdnNycXRoamMiLCJ0eXBlIjoiaGVhZGluZyIsImNvbnRlbnQiOiJWZWphIGFsZ3VucyBkb3MgcHJvamV0b3MgaW5jbHXDrWRvcyIsInN0eWxlcyI6eyJmb250U2l6ZSI6IjI4cHgiLCJmb250V2VpZ2h0IjoiNzAwIiwidGV4dENvbG9yIjoiI2ZmZmZmZiIsInRleHRBbGlnbiI6ImNlbnRlciIsInBhZGRpbmciOiIwIDAgMzJweCIsImFuaW1hdGlvbiI6ImZhZGUtaW4ifX0seyJpZCI6ImVsXzE3Njk2MDMyODUyOTZfOWM3bW43c21hIiwidHlwZSI6ImNhcm91c2VsIiwiY29udGVudCI6IiIsInN0eWxlcyI6eyJ3aWR0aCI6IjEwMCUiLCJoZWlnaHQiOiI1MDBweCIsImJvcmRlclJhZGl1cyI6IjE2cHgiLCJhbmltYXRpb24iOiJmYWRlLWluIn0sImNhcm91c2VsRGF0YSI6eyJpbWFnZXMiOlsiaHR0cHM6Ly9pLmliYi5jby9oUnN0V3pWUy9EZXNpZ24tc2VtLW5vbWUtNjAtMTF6b24tMS53ZWJwIiwiaHR0cHM6Ly9pLmliYi5jby9zOXk1Uk12WC9EZXNpZ24tc2VtLW5vbWUtNTktMTF6b24ud2VicCIsImh0dHBzOi8vaS5pYmIuY28vTWtrSjZKV0svRGVzaWduLXNlbS1ub21lLTE2LTExem9uLndlYnAiLCJodHRwczovL2kuaWJiLmNvL0Y0dG1DNzhLL0Rlc2lnbi1zZW0tbm9tZS0xNS0xMXpvbi53ZWJwIiwiaHR0cHM6Ly9pLmliYi5jby9QbkxwTXZ4L0Rlc2lnbi1zZW0tbm9tZS0xNC0xMXpvbi53ZWJwIiwiaHR0cHM6Ly9pLmliYi5jby9mQkd3bUxNL0Rlc2lnbi1zZW0tbm9tZS0xOC0xMXpvbi53ZWJwIiwiaHR0cHM6Ly9pLmliYi5jby8zeVZNRENOTC9EZXNpZ24tc2VtLW5vbWUtMTMtMTF6b24ud2VicCJdLCJhdXRvUGxheSI6dHJ1ZSwiaW50ZXJ2YWwiOjE4MDB9fSx7ImlkIjoiZWxfMTc2OTYwNjg2MjQwMl81aW1kNGEwbW8iLCJ0eXBlIjoiaGVhZGluZyIsImNvbnRlbnQiOiJBbMOpbSBkb3MgcHJvamV0b3MgZGUgUm9iw7N0aWNhIiwic3R5bGVzIjp7ImZvbnRTaXplIjoiMzJweCIsImZvbnRXZWlnaHQiOiI3MDAiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwidGV4dEFsaWduIjoiY2VudGVyIiwicGFkZGluZyI6IjIwcHgiLCJhbmltYXRpb24iOiJub25lIn19LHsiaWQiOiJlbF8xNzY5NjA2OTExNjgzX281amFyNWdsdSIsInR5cGUiOiJoZWFkaW5nIiwiY29udGVudCI6InZvY8OqIGFpbmRhIHJlY2ViZS4uLiIsInN0eWxlcyI6eyJmb250U2l6ZSI6IjI0cHgiLCJmb250V2VpZ2h0IjoiNzAwIiwidGV4dENvbG9yIjoiI2ZmZmZmZiIsInRleHRBbGlnbiI6ImNlbnRlciIsInBhZGRpbmciOiIxcHgiLCJhbmltYXRpb24iOiJub25lIn19LHsiaWQiOiJlbF8xNzY5NjA3MDI5MTE0X2RwdXhzMnlheCIsInR5cGUiOiJoZWFkaW5nIiwiY29udGVudCI6IjMgQsO0bnVzIEV4Y2x1c2l2b3MiLCJzdHlsZXMiOnsiZm9udFNpemUiOiIyOHB4IiwiZm9udFdlaWdodCI6IjcwMCIsInRleHRDb2xvciI6IiNmZjk5MDAiLCJ0ZXh0QWxpZ24iOiJjZW50ZXIiLCJwYWRkaW5nIjoiMTZweCIsImFuaW1hdGlvbiI6Im5vbmUifX0seyJpZCI6ImVsXzE3Njk2MDc0NTM5MDVfOXJyMXgwNHlpIiwidHlwZSI6ImltYWdlIiwiY29udGVudCI6IiIsInN0eWxlcyI6eyJ3aWR0aCI6IjEwMCUiLCJoZWlnaHQiOiJhdXRvIiwiYm9yZGVyUmFkaXVzIjoiOHB4IiwiYW5pbWF0aW9uIjoibm9uZSIsIm1hcmdpbkJvdHRvbSI6IjMycHgiLCJtYXJnaW5Ub3AiOiIzMnB4In0sInNyYyI6Imh0dHBzOi8vaS5pYmIuY28vcVlKTTBndFAvTW9sZGUtZGUtUk9CTE9YLVBhcmEtTW9udGFyLTYuanBnIn0seyJpZCI6ImVsXzE3Njk2MDc3ODYyNThfbXA0YWE0M21sIiwidHlwZSI6ImltYWdlIiwiY29udGVudCI6IiIsInN0eWxlcyI6eyJ3aWR0aCI6IjEwMCUiLCJoZWlnaHQiOiJhdXRvIiwiYm9yZGVyUmFkaXVzIjoiOHB4IiwiYW5pbWF0aW9uIjoibm9uZSIsIm1hcmdpbkJvdHRvbSI6IjMycHgifSwic3JjIjoiaHR0cHM6Ly9pLmliYi5jby9Ga0preXBKay9Nb2xkZS1kZS1ST0JMT1gtUGFyYS1Nb250YXItNS5qcGcifSx7ImlkIjoiZWxfMTc2OTYwODA1NTA5MF9kdWt0MHk4MzYiLCJ0eXBlIjoiaW1hZ2UiLCJjb250ZW50IjoiIiwic3R5bGVzIjp7IndpZHRoIjoiMTAwJSIsImhlaWdodCI6ImF1dG8iLCJib3JkZXJSYWRpdXMiOiI4cHgiLCJhbmltYXRpb24iOiJub25lIn0sInNyYyI6Imh0dHBzOi8vaS5pYmIuY28veW1rcDEyY0svTW9sZGUtZGUtUk9CTE9YLVBhcmEtTW9udGFyLTMuanBnIn1dfSx7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9ncmV4NXh6NDAiLCJ0eXBlIjoic2VjdGlvbiIsImNvbnRlbnQiOiIiLCJzdHlsZXMiOnsiYW5pbWF0aW9uIjoibm9uZSJ9LCJzZWN0aW9uRGF0YSI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjMGYwZjFhIiwicGFkZGluZ1RvcCI6IjQwcHgiLCJwYWRkaW5nQm90dG9tIjoiNDBweCIsInBhZGRpbmdMZWZ0IjoiMjBweCIsInBhZGRpbmdSaWdodCI6IjIwcHgifSwiY2hpbGRyZW4iOlt7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9sdW9vdzJ1bWkiLCJ0eXBlIjoiYW5jaG9yIiwiY29udGVudCI6Im9mZXJ0YSIsInN0eWxlcyI6eyJhbmltYXRpb24iOiJub25lIn19LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X2s3aXh6OW92MSIsInR5cGUiOiJoZWFkaW5nIiwiY29udGVudCI6IkVzY29saGEgU2V1IFBsYW5vIiwic3R5bGVzIjp7ImZvbnRTaXplIjoiMjhweCIsImZvbnRXZWlnaHQiOiI3MDAiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwidGV4dEFsaWduIjoiY2VudGVyIiwicGFkZGluZyI6IjAgMCAzMnB4IiwiYW5pbWF0aW9uIjoiZmFkZS1pbiJ9fSx7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9tbHMwdTRucjQiLCJ0eXBlIjoib2ZmZXIiLCJjb250ZW50IjoiIiwic3R5bGVzIjp7ImJhY2tncm91bmRDb2xvciI6IiMxZTFlMmUiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjMycHgiLCJib3JkZXJSYWRpdXMiOiIxNnB4IiwiYm9yZGVyQ29sb3IiOiIjMmEyYTNlIiwiYm9yZGVyV2lkdGgiOiIxcHgiLCJ0ZXh0QWxpZ24iOiJjZW50ZXIiLCJhbmltYXRpb24iOiJzY2FsZSJ9LCJvZmZlckRhdGEiOnsidGl0bGUiOiJQbGFubyBCw6FzaWNvIiwicHJpY2UiOiJSJCA1LDAwIiwicGF5bWVudFR5cGUiOiIoUGFnYW1lbnRvIMO6bmljbykiLCJiZW5lZml0cyI6WyJBY2Vzc28gYSBtYWlzIGRlIDM1MDAgbWluaXNzw6lyaWVzIGUgZG9yYW1hcyIsIlRvZG9zIG9zIGVwaXPDs2Rpb3MgbGliZXJhZG9zIGRvcyBtZWxob3JlcyBhcHBzIiwiQWNlc3NvIGltZWRpYXRvIl0sImJ1dHRvblRleHQiOiJRdWVybyBvIFBsYW5vIELDoXNpY28iLCJidXR0b25VcmwiOiIjIiwiYnV0dG9uQ29sb3IiOiIjMjJjNTVlIiwiYWNjZW50Q29sb3IiOiIjMjJjNTVlIiwicG9wdXAiOnsiZW5hYmxlZCI6dHJ1ZSwiYmFkZ2UiOiJVUEdSQURFIFBSRU1JVU0iLCJ0aXRsZSI6IlBhY290ZSBDb21wbGV0byIsInByaWNlIjoiUiQgNyw5MCIsInBheW1lbnRUeXBlIjoiQWNlc3NvIFZJVEFMw41DSU8iLCJiZW5lZml0cyI6WyIrMTAwIHByb2pldG9zIGRlIHJvYsOzdGljYSIsIkLDlE5VUyAxOiBNb2xkZXMgZGUgUm9ibG94IHBhcmEgbW9udGFyIiwiQsOUTlVTIDI6IE1vbGRlcyBkZSBNSW5lY3JhZnQgcGFyYSBtb250YXIiLCJCw5ROVVMgMzogMzAgbW9sZGVzIGRlIFBhcGVyY3JhZnQgcGFyYSBtb250YXIiXSwicHJpbWFyeUJ1dHRvblRleHQiOiJRdWVybyBvIFByZW1pdW0iLCJwcmltYXJ5QnV0dG9uVXJsIjoiIyIsInNlY29uZGFyeUJ1dHRvblRleHQiOiJRdWVybyBzw7MgYSBvZmVydGEgYsOhc2ljYSIsInNlY29uZGFyeUJ1dHRvblVybCI6IiMiLCJhY2NlbnRDb2xvciI6IiNkNGE4NTMifX19LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X25xNGEwYnN1MCIsInR5cGUiOiJzcGFjZXIiLCJjb250ZW50IjoiIiwic3R5bGVzIjp7ImhlaWdodCI6IjE2cHgiLCJhbmltYXRpb24iOiJub25lIn19LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X3A2dGcyMHZpcyIsInR5cGUiOiJvZmZlciIsImNvbnRlbnQiOiIiLCJzdHlsZXMiOnsiYmFja2dyb3VuZENvbG9yIjoiIzFlMWUyZSIsInRleHRDb2xvciI6IiNmZmZmZmYiLCJwYWRkaW5nIjoiMzJweCIsImJvcmRlclJhZGl1cyI6IjE2cHgiLCJib3JkZXJDb2xvciI6IiNjMjNkZmYiLCJib3JkZXJXaWR0aCI6IjJweCIsInRleHRBbGlnbiI6ImNlbnRlciIsImFuaW1hdGlvbiI6InNjYWxlIn0sIm9mZmVyRGF0YSI6eyJ0aXRsZSI6IlBsYW5vIENvbXBsZXRvIiwicHJpY2UiOiJSJCAxMCwwMCIsInBheW1lbnRUeXBlIjoiQWNlc3NvIFZpdGFsw61jaW8iLCJiZW5lZml0cyI6WyJBY2Vzc28gYSBtYWlzIGRlIDM1MDAgbWluaXNzw6lyaWVzIGUgZG9yYW1hcyIsIlRvZG9zIG9zIGVwaXPDs2Rpb3MgbGliZXJhZG9zIGRvcyBtZWxob3JlcyBhcHBzIiwiQWNlc3NvIGltZWRpYXRvIG11bHRpLWRpc3Bvc2l0aXZvIiwiQWNlc3NvIFZJUCBWaXRhbMOtY2lvIiwiTGFuw6dhbWVudG9zIGRpw6FyaW9zIGF1dG9tw6F0aWNvcyIsIlN1cG9ydGUgVklQIHByaW9yaXTDoXJpbyAyNC83Il0sImJ1dHRvblRleHQiOiJRdWVybyBHYXJhbnRpciBNZXUgQWNlc3NvIFZJUCIsImJ1dHRvblVybCI6IiMiLCJidXR0b25Db2xvciI6IiNjMjNkZmYiLCJhY2NlbnRDb2xvciI6IiNjMjNkZmYifX1dfSx7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9ub2g4dGh3eTEiLCJ0eXBlIjoic2VjdGlvbiIsImNvbnRlbnQiOiIiLCJzdHlsZXMiOnsiYW5pbWF0aW9uIjoibm9uZSJ9LCJzZWN0aW9uRGF0YSI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjMGYwZjFhIiwicGFkZGluZ1RvcCI6IjQwcHgiLCJwYWRkaW5nQm90dG9tIjoiNDBweCIsInBhZGRpbmdMZWZ0IjoiMjBweCIsInBhZGRpbmdSaWdodCI6IjIwcHgifSwiY2hpbGRyZW4iOlt7ImlkIjoiZWxfMTc2OTYwMzI4NTI5Nl9sbDQ1dTcyYWgiLCJ0eXBlIjoiZ3VhcmFudGVlIiwiY29udGVudCI6IiIsInN0eWxlcyI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjMWUxZTJlIiwidGV4dENvbG9yIjoiI2ZmZmZmZiIsInBhZGRpbmciOiIzMnB4IiwiYm9yZGVyUmFkaXVzIjoiMTZweCIsImFuaW1hdGlvbiI6ImZhZGUtaW4ifSwiZ3VhcmFudGVlRGF0YSI6eyJ0aXRsZSI6IkdhcmFudGlhIGRlIDcgRGlhcyIsImRlc2NyaXB0aW9uIjoiU2Ugdm9jw6ogbsOjbyBmaWNhciAxMDAlIHNhdGlzZmVpdG8gY29tIG8gYWNlc3NvLCBkZXZvbHZlbW9zIHNldSBkaW5oZWlybyBpbnRlZ3JhbG1lbnRlIGVtIGF0w6kgNyBkaWFzIGFww7NzIGEgY29tcHJhLiIsImRheXMiOjcsImZlYXR1cmVzIjpbIlNlbSBidXJvY3JhY2lhIiwiRGV2b2x1w6fDo28gaW1lZGlhdGEiLCJTZW0gcGVyZ3VudGFzIl0sImFjY2VudENvbG9yIjoiI2E2MDBmZiJ9fV19LHsiaWQiOiJlbF8xNzY5NjAzMjg1Mjk2X3d1NDBzNHExciIsInR5cGUiOiJzZWN0aW9uIiwiY29udGVudCI6IiIsInN0eWxlcyI6eyJhbmltYXRpb24iOiJub25lIn0sInNlY3Rpb25EYXRhIjp7ImJhY2tncm91bmRDb2xvciI6IiMwZjBmMWEiLCJwYWRkaW5nVG9wIjoiNDBweCIsInBhZGRpbmdCb3R0b20iOiI2MHB4IiwicGFkZGluZ0xlZnQiOiIyMHB4IiwicGFkZGluZ1JpZ2h0IjoiMjBweCJ9LCJjaGlsZHJlbiI6W3siaWQiOiJlbF8xNzY5NjAzMjg1Mjk2XzNqMWsxbjQ3eSIsInR5cGUiOiJmYXEiLCJjb250ZW50IjoiIiwic3R5bGVzIjp7ImJhY2tncm91bmRDb2xvciI6IiMxZTFlMmUiLCJ0ZXh0Q29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjI0cHgiLCJib3JkZXJSYWRpdXMiOiIxNnB4IiwiYW5pbWF0aW9uIjoiZmFkZS1pbiJ9LCJmYXFEYXRhIjp7Iml0ZW1zIjpbeyJxdWVzdGlvbiI6IkNvbW8gZnVuY2lvbmEgbyBhY2Vzc28/IiwiYW5zd2VyIjoiQXDDs3MgYSBjb25maXJtYcOnw6NvIGRvIHBhZ2FtZW50bywgdm9jw6ogcmVjZWJlcsOhIGltZWRpYXRhbWVudGUgb3MgZGFkb3MgZGUgYWNlc3NvIHBvciBlLW1haWwgZSBXaGF0c0FwcC4gQmFzdGEgZmF6ZXIgbG9naW4gZSBjb21lw6dhciBhIGFzc2lzdGlyISJ9LHsicXVlc3Rpb24iOiJQb3NzbyBhc3Npc3RpciBlbSBxdWFudG9zIGRpc3Bvc2l0aXZvcz8iLCJhbnN3ZXIiOiJWb2PDqiBwb2RlIGFzc2lzdGlyIGVtIGF0w6kgMyBkaXNwb3NpdGl2b3Mgc2ltdWx0YW5lYW1lbnRlOiBjZWx1bGFyLCB0YWJsZXQsIGNvbXB1dGFkb3Igb3UgVFYuIn0seyJxdWVzdGlvbiI6Ik8gcGFnYW1lbnRvIMOpIHJlY29ycmVudGU/IiwiYW5zd2VyIjoiTsOjbyEgTyBwYWdhbWVudG8gw6kgw7puaWNvLiBWb2PDqiBwYWdhIHVtYSB2ZXogZSB0ZW0gYWNlc3NvIHBlbG8gdGVtcG8gZG8gcGxhbm8gZXNjb2xoaWRvLiJ9LHsicXVlc3Rpb24iOiJFIHNlIGV1IG7Do28gZ29zdGFyPyIsImFuc3dlciI6Ik9mZXJlY2Vtb3MgZ2FyYW50aWEgZGUgNyBkaWFzLiBTZSBuw6NvIGZpY2FyIHNhdGlzZmVpdG8sIGRldm9sdmVtb3MgMTAwJSBkbyBzZXUgZGluaGVpcm8sIHNlbSBwZXJndW50YXMuIn1dLCJhY2NlbnRDb2xvciI6IiNhNjAwZmYifX1dfV0sInBhZ2VTdHlsZXMiOnsiYmFja2dyb3VuZENvbG9yIjoiIzBmMGYxYSIsIm1heFdpZHRoIjoiNDgwcHgiLCJwYWRkaW5nIjoiMjBweCIsInVzZUdyYWRpZW50IjpmYWxzZSwiZ3JhZGllbnRDb2xvcjEiOiIjMWExYTJlIiwiZ3JhZGllbnRDb2xvcjIiOiIjMGYwZjFhIiwiZ3JhZGllbnREaXJlY3Rpb24iOiJ0byBib3R0b20iLCJmb250RmFtaWx5IjoiSW50ZXIsIHNhbnMtc2VyaWYifSwic2NyaXB0U2V0dGluZ3MiOnsidXRtaWZ5U2NyaXB0IjpmYWxzZSwiZmFjZWJvb2tQaXhlbCI6ZmFsc2UsImZhY2Vib29rUGl4ZWxJZCI6IiIsInV0bWlmeVBpeGVsIjpmYWxzZSwidXRtaWZ5UGl4ZWxJZCI6IiIsImJhY2tSZWRpcmVjdCI6ZmFsc2UsImJhY2tSZWRpcmVjdFVybCI6IiIsInVyZ2VuY3lCYXIiOnRydWUsInVyZ2VuY3lCYXJTdHlsZSI6InRpbWVyIiwidXJnZW5jeUJhclRleHQiOiJFc3NhIHByb21vw6fDo28gYWNhYmEgZW0iLCJ1cmdlbmN5QmFyTWludXRlcyI6MjAsInVyZ2VuY3lCYXJCZ0NvbG9yIjoiI2RjMjYyNiIsInVyZ2VuY3lCYXJUZXh0Q29sb3IiOiIjZmZmZmZmIiwidXJnZW5jeUJhckhpZ2hsaWdodENvbG9yIjoiI2ZmZmYwMCIsImZha2VQdXJjaGFzZSI6dHJ1ZSwiZmFrZVB1cmNoYXNlR2VuZGVyIjoiYm90aCIsImZha2VQdXJjaGFzZUludGVydmFsIjoxNSwiZmFrZVB1cmNoYXNlQmdDb2xvciI6IiMyMmM1NWUiLCJmYWtlUHVyY2hhc2VUZXh0Q29sb3IiOiIjZmZmZmZmIiwiZmFrZVB1cmNoYXNlUHJvZHVjdE5hbWUiOiJBY2Vzc28gVklQIiwiZml4ZWRCdXR0b24iOmZhbHNlLCJmaXhlZEJ1dHRvblRleHQiOiJDT01QUkFSIEFHT1JBIiwiZml4ZWRCdXR0b25VcmwiOiIjIiwiZml4ZWRCdXR0b25CZ0NvbG9yIjoiI2RjMjYyNiIsImZpeGVkQnV0dG9uVGV4dENvbG9yIjoiI2ZmZmZmZiIsImZpeGVkQnV0dG9uQ29udGFpbmVyQmdDb2xvciI6InJnYmEoMCwwLDAsMC44KSIsImV4aXRQb3B1cCI6ZmFsc2UsImV4aXRQb3B1cFRpdGxlIjoiRXNwZXJlISIsImV4aXRQb3B1cFRleHQiOiJWb2PDqiBlc3TDoSBwcmVzdGVzIGEgcGVyZGVyIGVzc2Egb3BvcnR1bmlkYWRlIMO6bmljYSEiLCJleGl0UG9wdXBCdXR0b25UZXh0IjoiUVVFUk8gQVBST1ZFSVRBUiIsImV4aXRQb3B1cEJ1dHRvblVybCI6IiMiLCJleGl0UG9wdXBCZ0NvbG9yIjoiIzFhMWEyZSIsImV4aXRQb3B1cFRleHRDb2xvciI6IiNmZmZmZmYiLCJleGl0UG9wdXBCdXR0b25CZ0NvbG9yIjoiIzIyYzU1ZSIsImV4aXRQb3B1cEJ1dHRvblRleHRDb2xvciI6IiNmZmZmZmYiLCJleGl0UG9wdXBJbWFnZSI6IiIsImV4aXRQb3B1cEVuYWJsZWQiOmZhbHNlLCJmYWtlTm90aWZpY2F0aW9uc0VuYWJsZWQiOmZhbHNlfX0=:END_BUILD_EASY_DATA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function() {
+      try {
+        var STORAGE_KEY = '_lowify_utm_params';
+        var trackingKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 
+                           'utm_id', 'fbclid', 'gclid', 'ref', 'src', 'sck', 'xcod', 'ttclid', 'li_fat_id'];
+        
+        // Function to get stored UTMs from localStorage
+        function getStoredUtms() {
+          try {
+            var stored = localStorage.getItem(STORAGE_KEY);
+            return stored ? JSON.parse(stored) : {};
+          } catch(e) { return {}; }
+        }
+        
+        // Function to save UTMs to localStorage
+        function saveUtms(params) {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(params));
+          } catch(e) {}
+        }
+        
+        // Capture UTMs from the real page URL.
+        // IMPORTANT: published pages are rendered inside an iframe via srcDoc,
+        // so window.location.search inside the iframe is usually empty.
+        // We must fallback to the top/parent URL (same-origin) or referrer.
+        function getEffectiveSearch() {
+          try {
+            var s = (window.location && window.location.search) ? window.location.search : '';
+            if (s) return s;
+          } catch(e) {}
+
+          // Try top (best) then parent
+          try {
+            if (window.top && window.top !== window && window.top.location) {
+              var ts = window.top.location.search || '';
+              if (ts) return ts;
+            }
+          } catch(e) {}
+
+          try {
+            if (window.parent && window.parent !== window && window.parent.location) {
+              var ps = window.parent.location.search || '';
+              if (ps) return ps;
+            }
+          } catch(e) {}
+
+          // Last resort: parse referrer
+          try {
+            if (document.referrer) {
+              var refUrl = new URL(document.referrer);
+              return refUrl.search || '';
+            }
+          } catch(e) {}
+
+          return '';
+        }
+
+        var currentParams = getEffectiveSearch();
+        var urlParams = new URLSearchParams(currentParams || '');
+        var newUtmParams = {};
+        
+        urlParams.forEach(function(value, key) {
+          // Only capture if value is not empty
+          if (value && value.trim() !== '') {
+            var lowerKey = key.toLowerCase();
+            if (key.startsWith('utm_') || trackingKeys.includes(lowerKey)) {
+              newUtmParams[key] = value;
+            }
+          }
+        });
+        
+        // Merge with stored UTMs (new params override old ones)
+        var storedUtms = getStoredUtms();
+        var utmParams = {};
+        
+        // First add stored params (only non-empty)
+        for (var k in storedUtms) {
+          if (storedUtms[k] && storedUtms[k].trim() !== '') {
+            utmParams[k] = storedUtms[k];
+          }
+        }
+        
+        // Then override with new params from URL (only non-empty)
+        for (var k in newUtmParams) {
+          if (newUtmParams[k] && newUtmParams[k].trim() !== '') {
+            utmParams[k] = newUtmParams[k];
+          }
+        }
+        
+        // Save merged params back to localStorage
+        if (Object.keys(utmParams).length > 0) {
+          saveUtms(utmParams);
+        }
+        
+        // If no tracking params found, exit
+        if (Object.keys(utmParams).length === 0) return;
+        
+        // Function to append params to a URL (FORCE override existing params)
+        function appendParamsToUrl(url) {
+          if (!url || url === '#' || url.startsWith('javascript:')) return url;
+          
+          try {
+            var urlObj = new URL(url, window.location.origin);
+            
+            // FORCE override - always set our UTMs, replacing any existing values
+            // This ensures our tracked UTMs override "organic" or empty values
+            for (var key in utmParams) {
+              var val = utmParams[key];
+              if (val && val.trim() !== '') {
+                // Always override - remove existing and set new
+                urlObj.searchParams.delete(key);
+                urlObj.searchParams.set(key, val);
+              }
+            }
+            
+            // Also remove any empty UTM params that might be in the URL
+            var keysToCheck = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+            keysToCheck.forEach(function(k) {
+              var existing = urlObj.searchParams.get(k);
+              // Remove if empty, "organic" (default), or not in our tracked params
+              if (existing !== null && (existing === '' || existing === 'organic') && !utmParams[k]) {
+                urlObj.searchParams.delete(k);
+              }
+            });
+            
+            return urlObj.toString();
+          } catch(e) {
+            // If URL parsing fails, we need to handle manually
+            // First, try to remove existing UTM params from the URL
+            var cleanUrl = url;
+            var trackingToReplace = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id'];
+            trackingToReplace.forEach(function(param) {
+              // Remove param=value& or &param=value or ?param=value
+              cleanUrl = cleanUrl.replace(new RegExp('[?&]' + param + '=[^&]*', 'gi'), '');
+            });
+            // Clean up any double && or trailing ?
+            cleanUrl = cleanUrl.replace(/&&/g, '&').replace(/?&/g, '?').replace(/?$/g, '').replace(/&$/g, '');
+            
+            // Now append our params
+            var paramsToAdd = [];
+            for (var k in utmParams) {
+              var v = utmParams[k];
+              if (v && v.trim() !== '') {
+                paramsToAdd.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+              }
+            }
+            if (paramsToAdd.length === 0) return cleanUrl || url;
+            var separator = cleanUrl.includes('?') ? '&' : '?';
+            return cleanUrl + separator + paramsToAdd.join('&');
+          }
+        }
+        
+        // Process all links on page load
+        function processLinks() {
+          var links = document.querySelectorAll('a[href]');
+          links.forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (href && href !== '#' && !href.startsWith('javascript:') && !href.startsWith('#')) {
+              link.setAttribute('href', appendParamsToUrl(href));
+            }
+          });
+        }
+        
+        // Run on DOMContentLoaded
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', processLinks);
+        } else {
+          processLinks();
+        }
+        
+        // Also observe for dynamically added links (popups, etc)
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.nodeType === 1) {
+                if (node.tagName === 'A' && node.hasAttribute('href')) {
+                  var href = node.getAttribute('href');
+                  if (href && href !== '#' && !href.startsWith('javascript:') && !href.startsWith('#')) {
+                    node.setAttribute('href', appendParamsToUrl(href));
+                  }
+                }
+                // Check child links
+                var childLinks = node.querySelectorAll ? node.querySelectorAll('a[href]') : [];
+                childLinks.forEach(function(link) {
+                  var href = link.getAttribute('href');
+                  if (href && href !== '#' && !href.startsWith('javascript:') && !href.startsWith('#')) {
+                    link.setAttribute('href', appendParamsToUrl(href));
+                  }
+                });
+              }
+            });
+          });
+        });
+        
+        observer.observe(document.body || document.documentElement, { 
+          childList: true, 
+          subtree: true 
+        });
+        
+        // ===== NAVIGATION INTERCEPTORS (window.open / location / inline onclick / forms) =====
+        // Goal: pass UTMs even when navigation is triggered by JS (buttons, custom HTML, etc.)
+
+        // Intercept window.open (works in most browsers)
+        try {
+          var originalWindowOpen = window.open;
+          if (originalWindowOpen) {
+            window.open = function(url, target, features) {
+              if (url && typeof url === 'string') {
+                url = appendParamsToUrl(url);
+              }
+              return originalWindowOpen.call(window, url, target, features);
+            };
+          }
+        } catch(e) {}
+
+        // Intercept Location.assign/replace at the prototype level (more compatible than overwriting instance methods)
+        try {
+          var locProto = Object.getPrototypeOf(window.location);
+          if (locProto) {
+            if (typeof locProto.assign === 'function') {
+              var originalAssign = locProto.assign;
+              locProto.assign = function(url) {
+                if (url && typeof url === 'string') {
+                  url = appendParamsToUrl(url);
+                }
+                return originalAssign.call(this, url);
+              };
+            }
+            if (typeof locProto.replace === 'function') {
+              var originalReplace = locProto.replace;
+              locProto.replace = function(url) {
+                if (url && typeof url === 'string') {
+                  url = appendParamsToUrl(url);
+                }
+                return originalReplace.call(this, url);
+              };
+            }
+          }
+        } catch(e) {}
+
+        // Best-effort intercept for location.href setter (some browsers forbid redefining)
+        try {
+          var proto = Object.getPrototypeOf(window.location);
+          var hrefDescriptor = proto ? Object.getOwnPropertyDescriptor(proto, 'href') : null;
+          if (!hrefDescriptor) {
+            hrefDescriptor = Object.getOwnPropertyDescriptor(Location.prototype, 'href');
+          }
+          if (hrefDescriptor && hrefDescriptor.set) {
+            var originalHrefSetter = hrefDescriptor.set;
+            Object.defineProperty(hrefDescriptor === (proto && Object.getOwnPropertyDescriptor(proto, 'href')) ? proto : Location.prototype, 'href', {
+              get: hrefDescriptor.get,
+              set: function(url) {
+                if (url && typeof url === 'string') {
+                  url = appendParamsToUrl(url);
+                }
+                return originalHrefSetter.call(this, url);
+              },
+              configurable: true
+            });
+          }
+        } catch(e) {}
+
+        function patchInlineOnclick(el) {
+          try {
+            if (!el || !el.getAttribute) return;
+            var onclick = el.getAttribute('onclick');
+            if (!onclick) return;
+
+            // Replace any hardcoded URLs inside onclick="..." with UTM-appended versions.
+            // Works for both single and double quotes inside the attribute.
+            // NOTE: do not include the backtick char in this regex because this script is embedded in a JS template literal.
+            var replaced = onclick.replace(/(https?://[^s'"<>]+)(?![^s]*))/g, function(u) {
+              return appendParamsToUrl(u);
+            });
+
+            if (replaced !== onclick) {
+              el.setAttribute('onclick', replaced);
+            }
+          } catch(e) {}
+        }
+
+        function patchFormAction(form) {
+          try {
+            if (!form) return;
+            var action = form.getAttribute('action');
+            if (action) form.setAttribute('action', appendParamsToUrl(action));
+
+            // Also handle <button formaction="...">
+            var btns = form.querySelectorAll ? form.querySelectorAll('[formaction]') : [];
+            btns.forEach(function(b) {
+              var fa = b.getAttribute('formaction');
+              if (fa) b.setAttribute('formaction', appendParamsToUrl(fa));
+            });
+          } catch(e) {}
+        }
+
+        // Capture-phase click patching (runs before inline onclick and most listeners)
+        document.addEventListener('click', function(e) {
+          try {
+            var node = e.target;
+            while (node && node !== document.body) {
+              // Anchor: patch right before navigation
+              if (node.tagName === 'A' && node.getAttribute) {
+                var href = node.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript:') && !href.startsWith('#')) {
+                  node.setAttribute('href', appendParamsToUrl(href));
+                }
+                patchInlineOnclick(node);
+                break;
+              }
+
+              // Buttons / custom clickable elements
+              if (node.getAttribute) {
+                // data-href style navigation
+                var dataHref = node.getAttribute('data-href') || node.getAttribute('data-url') || node.getAttribute('data-link');
+                if (dataHref) {
+                  var patched = appendParamsToUrl(dataHref);
+                  node.setAttribute('data-href', patched);
+                  node.setAttribute('data-url', patched);
+                  node.setAttribute('data-link', patched);
+                }
+
+                // inline onclick with hardcoded URL
+                patchInlineOnclick(node);
+
+                // if inside a form, patch form action too
+                var form = node.closest ? node.closest('form') : null;
+                if (form) patchFormAction(form);
+              }
+
+              node = node.parentElement;
+            }
+          } catch(err) {}
+        }, true);
+
+        // Patch on submit too (covers Enter-to-submit, programmatic submits, etc)
+        document.addEventListener('submit', function(e) {
+          try { patchFormAction(e.target); } catch(err) {}
+        }, true);
+        
+      } catch(e) { console.warn('UTM passthrough error:', e); }
+    })();
+  </script>
+      <script>
+        (function() {
+          try {
+            var timeLeft = 20 * 60;
+            
+            function formatTime(seconds) {
+              var mins = Math.floor(seconds / 60);
+              var secs = seconds % 60;
+              return (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+            }
+            
+            function updateTimer() {
+              var timerEl = document.getElementById('urgency-timer');
+              if (timerEl && timeLeft > 0) {
+                timerEl.textContent = formatTime(timeLeft);
+                timeLeft--;
+              }
+            }
+            
+            setInterval(updateTimer, 1000);
+            updateTimer();
+          } catch(e) { console.warn('Urgency timer error:', e); }
+        })();
+      </script>
+    <script>
+      (function() {
+        try {
+          var names = ["Letícia","Maria","Ana","Juliana","Fernanda","Camila","Beatriz","Larissa","Amanda","Gabriela","Mariana","Carolina","Rafaela","Patrícia","Bruna","Lucas","Pedro","João","Gabriel","Rafael","Bruno","Carlos","Matheus","Felipe","Gustavo","Ricardo","André","Marcelo","Thiago","Leonardo"];
+          var productName = "Acesso VIP";
+          var interval = 15 * 1000;
+          
+          function getRandomName() {
+            return names[Math.floor(Math.random() * names.length)];
+          }
+          
+          function showNotification() {
+            try {
+              var existing = document.getElementById('fake-purchase-notification');
+              if (existing) existing.remove();
+              
+              var notification = document.createElement('div');
+              notification.id = 'fake-purchase-notification';
+              notification.innerHTML = '<div style="width:40px;height:40px;border-radius:50%;background-color:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;">✓</div><div><div style="font-weight:600;font-size:14px;">' + getRandomName() + ' acabou de comprar</div><div style="font-size:12px;opacity:0.8;">' + productName + '</div></div>';
+              notification.style.cssText = 'position:fixed;bottom:20px;left:20px;background-color:#22c55e;color:#ffffff;padding:12px 20px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:9998;display:flex;align-items:center;gap:12px;animation:slideInLeft 0.4s ease-out;max-width:300px;';
+              document.body.appendChild(notification);
+              
+              setTimeout(function() {
+                if (notification.parentNode) notification.remove();
+              }, 4000);
+            } catch(e) { console.warn('Fake notification render error:', e); }
+          }
+          
+          setTimeout(showNotification, 3000);
+          setInterval(showNotification, interval);
+        } catch(e) { console.warn('Fake purchase script error:', e); }
+      })();
+    </script>
+    <style>
+      @keyframes slideInLeft {
+        from { transform: translateX(-100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: clip;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0f0f1a;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: clip;
+            width: 100%;
+            max-width: 100vw;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+        }
+        
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #0f0f1a;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            width: 100%;
+        }
+        
+        .content > :not(.section) {
+            margin-bottom: 16px;
+        }
+        
+        .content > :not(.section):last-child {
+            margin-bottom: 0;
+        }
+        
+        .content > .section {
+            margin-bottom: 0;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes pulseBtn {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+        }
+        
+        @keyframes shakeBtn {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
+            95% { transform: translateX(0); }
+        }
+        
+        @keyframes glowBtn {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 4px 14px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px currentColor, 0 4px 14px rgba(0, 0, 0, 0.2);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0px;
+            }
+            
+            .container {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="margin: calc(-1 * 20px) calc(-1 * 20px) 0; width: calc(100% + 2 * 20px); background-color:#dc2626;color:#ffffff;padding:10px 20px;text-align:center;font-weight:600;font-size:14px;display:flex;justify-content:center;align-items:center;gap:8px;font-family:Arial,sans-serif;">
+              <span>Essa promoção acaba em</span>
+              <span id="urgency-timer" style="background-color:rgba(0,0,0,0.2);padding:4px 12px;border-radius:4px;font-family:monospace;font-size:16px;">00:00</span>
+            </div>
+        <div class="content">
+        <div class="section" style="position: relative; background-color: #0f0f1a; padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; margin-left: calc(-1 * 20px); margin-right: calc(-1 * 20px); width: calc(100% + 2 * 20px);"><div style="position: relative; z-index: 2;"><h2 style="color: #ffffff; font-size: 32px; font-weight: 700; text-align: center; padding: 0 0 16px; animation: fadeIn 0.6s ease-out forwards; animation-delay: 0s; opacity: 0;"><span style="color: #f97316;">TIRE SEU FILHO  </span><span style="color: #ffff;">DAS TELAS COM ROBÓTICA</span></h2>
+<p style="color: #a0a0a0; font-size: 18px; font-weight: 400; text-align: center; padding: 0 0 24px; animation: fadeIn 0.6s ease-out forwards; animation-delay: 0.1s; opacity: 0;">Diversão que ensina de verdade.
+Com materiais simples e muita criatividade, seu filho aprende, brinca e se desenvolve de forma ativa e longe das telas!</p>
+<div style="display: flex; justify-content: center; margin-top: 0px; margin-bottom: 0px;"><img src="https://i.ibb.co/CK9f9w0q/Design-sem-nome-58.jpg" alt="Imagem" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;  " /></div>
+<div style="height: 24px;"></div>
+<div style="text-align: center; margin-top: 0px; margin-bottom: 0px;">
+        <a href="#oferta"  onclick="event.preventDefault(); var target = document.getElementById('oferta'); if(target) target.scrollIntoView({behavior: 'smooth', block: 'start'});" style="background-color: #c23dff; color: #ffffff; font-size: 18px; font-weight: 700; text-align: center; padding: 18px 48px; border-radius: 12px; animation: pulseBtn 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; display: inline-block; text-decoration: none; transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">QUERO ACESSAR AGORA</a>
+      </div></div></div>
+        <div class="section" style="position: relative; background-color: #0f0f1a; padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; margin-left: calc(-1 * 20px); margin-right: calc(-1 * 20px); width: calc(100% + 2 * 20px);"><div style="position: relative; z-index: 2;"><h2 style="color: #ffffff; font-size: 28px; font-weight: 700; text-align: center; padding: 0 0 19px; animation: fadeIn 0.6s ease-out forwards; animation-delay: 0.1s; opacity: 0;">O Que Você Vai Receber</h2>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.2s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Projetos de robótica(R$ 89)</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.30000000000000004s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;"> Lançamento de LED</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.4s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Robô Iluminador</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.5s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Robô Dançarino Solar</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.6000000000000001s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Circuito em série</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.7000000000000001s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Robô Homopolar</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.8s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;"> +50 projetos educativos kids!</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div>
+<div style="background-color: #1e1e2e; color: #ffffff; padding: 24px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: slideUp 0.6s ease-out forwards; animation-delay: 0.9s; opacity: 0;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex-direction: row;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #a855f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">E muito mais...</h3>
+              <p style="font-size: 14px; opacity: 0.8; margin: 0;"></p>
+            </div>
+          </div>
+        </div></div></div>
+        <div class="section" style="position: relative; background-color: #0f0f1a; padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; margin-left: calc(-1 * 20px); margin-right: calc(-1 * 20px); width: calc(100% + 2 * 20px);"><div style="position: relative; z-index: 2;"><h2 style="color: #ffffff; font-size: 28px; font-weight: 700; text-align: center; padding: 0 0 32px; animation: fadeIn 0.6s ease-out forwards; animation-delay: 0.2s; opacity: 0;">Veja alguns dos projetos incluídos</h2>
+<div style="display: flex; justify-content: center;">
+        <div style="position: relative; overflow: hidden; width: 100%; max-width: 100%; border-radius: 16px; animation: fadeIn 0.6s ease-out forwards;">
+          <div id="carousel_h0yczzi81" style="display: flex; transition: transform 0.5s ease-out;">
+            
+        <img src="https://i.ibb.co/hRstWzVS/Design-sem-nome-60-11zon-1.webp" alt="Slide 1" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 500px; border-radius: 16px;" />
+      
+        <img src="https://i.ibb.co/s9y5RMvX/Design-sem-nome-59-11zon.webp" alt="Slide 2" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 500px; border-radius: 16px;" />
+      
+        <img src="https://i.ibb.co/MkkJ6JWK/Design-sem-nome-16-11zon.webp" alt="Slide 3" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 500px; border-radius: 16px;" />
+      
+        <img src="https://i.ibb.co/F4tmC78K/Design-sem-nome-15-11zon.webp" alt="Slide 4" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 500px; border-radius: 16px;" />
+      
+        <img src="https://i.ibb.co/PnLpMvx/Design-sem-nome-14-11zon.webp" alt="Slide 5" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 500px; border-radius: 16px;" />
+      
+        <img src="https://i.ibb.co/fBGwmLM/Design-sem-nome-18-11zon.webp" alt="Slide 6" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 500px; border-radius: 16px;" />
+      
+        <img src="https://i.ibb.co/3yVMDCNL/Design-sem-nome-13-11zon.webp" alt="Slide 7" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 500px; border-radius: 16px;" />
+      
+          </div>
+          <button onclick="(function(){var c=document.getElementById('carousel_h0yczzi81');var i=parseInt(c.dataset.index||0);var t=7;i=(i-1+t)%t;c.style.transform='translateX(-'+i*100+'%)';c.dataset.index=i;})();" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background-color: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button onclick="(function(){var c=document.getElementById('carousel_h0yczzi81');var i=parseInt(c.dataset.index||0);var t=7;i=(i+1)%t;c.style.transform='translateX(-'+i*100+'%)';c.dataset.index=i;})();" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background-color: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.5);"></span>
+          </div>
+          <script>(function(){var c=document.getElementById('carousel_h0yczzi81');var i=0;var t=7;setInterval(function(){i=(i+1)%t;c.style.transform='translateX(-'+i*100+'%)';c.dataset.index=i;},1800);})();</script>
+        </div>
+      </div>
+<h2 style="color: #ffffff; font-size: 32px; font-weight: 700; text-align: center; padding: 20px;">Além dos projetos de Robótica</h2>
+<h2 style="color: #ffffff; font-size: 24px; font-weight: 700; text-align: center; padding: 1px;">você ainda recebe...</h2>
+<h2 style="color: #ff9900; font-size: 28px; font-weight: 700; text-align: center; padding: 16px;">3 Bônus Exclusivos</h2>
+<div style="display: flex; justify-content: center; margin-top: 32px; margin-bottom: 32px;"><img src="https://i.ibb.co/qYJM0gtP/Molde-de-ROBLOX-Para-Montar-6.jpg" alt="Imagem" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;  " /></div>
+<div style="display: flex; justify-content: center; margin-top: 0px; margin-bottom: 32px;"><img src="https://i.ibb.co/FkJkypJk/Molde-de-ROBLOX-Para-Montar-5.jpg" alt="Imagem" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;  " /></div>
+<div style="display: flex; justify-content: center; margin-top: 0px; margin-bottom: 0px;"><img src="https://i.ibb.co/ymkp12cK/Molde-de-ROBLOX-Para-Montar-3.jpg" alt="Imagem" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;  " /></div></div></div>
+        <div class="section" style="position: relative; background-color: #0f0f1a; padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; margin-left: calc(-1 * 20px); margin-right: calc(-1 * 20px); width: calc(100% + 2 * 20px);"><div style="position: relative; z-index: 2;"><div id="oferta" style="height: 0; overflow: hidden;"></div>
+<h2 style="color: #ffffff; font-size: 28px; font-weight: 700; text-align: center; padding: 0 0 32px; animation: fadeIn 0.6s ease-out forwards; animation-delay: 0.4s; opacity: 0;">Escolha Seu Plano</h2>
+<div style="background-color: #1e1e2e; color: #ffffff; text-align: center; padding: 32px; border-radius: 16px; border-color: #2a2a3e; border-width: 1px; border-style: solid; animation: scaleIn 0.5s ease-out forwards; animation-delay: 0.5s; opacity: 0; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+          
+          <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #ffffff;">Plano Básico</h3>
+          <p style="font-size: 14px; opacity: 0.7; margin-bottom: 8px;">(Pagamento único)</p>
+          
+          <div style="margin-bottom: 24px;">
+            <span style="font-size: 48px; font-weight: 800; color: #22c55e; line-height: 1;">R$ 5,00</span>
+          </div>
+          <div style="height: 1px; background-color: #2a2a3e; margin: 0 -16px 24px;"></div>
+          <div style="text-align: left; margin-bottom: 24px;">
+            
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #22c55e; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Acesso a mais de 3500 minisséries e doramas</span>
+        </div>
+      
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #22c55e; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Todos os episódios liberados dos melhores apps</span>
+        </div>
+      
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #22c55e; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Acesso imediato</span>
+        </div>
+      
+          </div>
+          <a href="#"  onclick="event.preventDefault(); document.getElementById('offer_w5ur2b3th-popup').style.display='flex'; document.documentElement.style.overflow='hidden'; document.body.style.overflow='hidden';" style="display: block; width: 100%; padding: 16px 24px; background-color: #22c55e; color: #ffffff; font-size: 16px; font-weight: 600; text-align: center; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 14px #22c55e40; cursor: pointer; animation: scaleIn 0.5s ease-out forwards;">Quero o Plano Básico</a>
+        </div>
+        <div id="offer_w5ur2b3th-popup" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.85); z-index: 2147483647; align-items: center; justify-content: center; padding: 12px; overflow-y: auto; overscroll-behavior: contain;" onclick="if(event.target===this){ document.getElementById('offer_w5ur2b3th-popup').style.display='none'; document.documentElement.style.overflow=''; document.body.style.overflow=''; }">
+          <div style="background: #1a1a2e; border-radius: 16px; padding: 20px; max-width: 360px; width: 100%; position: relative; border: 2px solid #d4a853; box-shadow: 0 0 40px #d4a85340; margin: auto;">
+            <button onclick="document.getElementById('offer_w5ur2b3th-popup').style.display='none'; document.documentElement.style.overflow=''; document.body.style.overflow='';" style="position: absolute; top: 12px; right: 12px; background: none; border: none; color: #888; cursor: pointer; font-size: 20px; line-height: 1;">&times;</button>
+            <div style="text-align: center;">
+              <span style="display: inline-block; background-color: #d4a853; color: #1a1a2e; padding: 6px 14px; border-radius: 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">UPGRADE PREMIUM</span>
+              <h3 style="font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Pacote Completo</h3>
+              <div style="margin-bottom: 4px;">
+                <span style="font-size: 36px; font-weight: 800; color: #d4a853; line-height: 1;">R$ 7,90</span>
+              </div>
+              <p style="font-size: 13px; color: #ffffff; margin-bottom: 16px;">Acesso VITALÍCIO</p>
+              <div style="background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 14px; margin-bottom: 16px; text-align: left;">
+                <p style="font-size: 10px; font-weight: 600; text-transform: uppercase; color: #d4a853; margin-bottom: 10px;">INCLUI:</p>
+                
+          <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background-color: #d4a853; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span style="font-size: 13px; line-height: 1.4; color: #ffffff;">+100 projetos de robótica</span>
+          </div>
+        
+          <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background-color: #d4a853; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span style="font-size: 13px; line-height: 1.4; color: #ffffff;">BÔNUS 1: Moldes de Roblox para montar</span>
+          </div>
+        
+          <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background-color: #d4a853; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span style="font-size: 13px; line-height: 1.4; color: #ffffff;">BÔNUS 2: Moldes de MInecraft para montar</span>
+          </div>
+        
+          <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background-color: #d4a853; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span style="font-size: 13px; line-height: 1.4; color: #ffffff;">BÔNUS 3: 30 moldes de Papercraft para montar</span>
+          </div>
+        
+              </div>
+              <a href="#" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 12px 16px; background-color: #d4a853; color: #1a1a2e; font-size: 14px; font-weight: 700; text-align: center; border-radius: 10px; text-decoration: none; text-transform: uppercase; margin-bottom: 8px;">Quero o Premium</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 10px 16px; background-color: transparent; color: #888; font-size: 12px; font-weight: 500; text-align: center; border-radius: 10px; text-decoration: none; border: 1px solid #444;">Quero só a oferta básica</a>
+            </div>
+          </div>
+        </div>
+<div style="height: 16px;"></div>
+<div style="background-color: #1e1e2e; color: #ffffff; text-align: center; padding: 32px; border-radius: 16px; border-color: #c23dff; border-width: 2px; border-style: solid; animation: scaleIn 0.5s ease-out forwards; animation-delay: 0.7000000000000001s; opacity: 0; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+          
+          <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #ffffff;">Plano Completo</h3>
+          <p style="font-size: 14px; opacity: 0.7; margin-bottom: 8px;">Acesso Vitalício</p>
+          
+          <div style="margin-bottom: 24px;">
+            <span style="font-size: 48px; font-weight: 800; color: #c23dff; line-height: 1;">R$ 10,00</span>
+          </div>
+          <div style="height: 1px; background-color: #c23dff; margin: 0 -16px 24px;"></div>
+          <div style="text-align: left; margin-bottom: 24px;">
+            
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #c23dff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Acesso a mais de 3500 minisséries e doramas</span>
+        </div>
+      
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #c23dff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Todos os episódios liberados dos melhores apps</span>
+        </div>
+      
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #c23dff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Acesso imediato multi-dispositivo</span>
+        </div>
+      
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #c23dff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Acesso VIP Vitalício</span>
+        </div>
+      
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #c23dff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Lançamentos diários automáticos</span>
+        </div>
+      
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+          <div style="width: 20px; height: 20px; border-radius: 50%; background-color: #c23dff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span style="font-size: 15px; line-height: 1.5;">Suporte VIP prioritário 24/7</span>
+        </div>
+      
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer"  style="display: block; width: 100%; padding: 16px 24px; background-color: #c23dff; color: #ffffff; font-size: 16px; font-weight: 600; text-align: center; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 14px #c23dff40; cursor: pointer; animation: scaleIn 0.5s ease-out forwards;">Quero Garantir Meu Acesso VIP</a>
+        </div></div></div>
+        <div class="section" style="position: relative; background-color: #0f0f1a; padding-top: 40px; padding-bottom: 40px; padding-left: 20px; padding-right: 20px; margin-left: calc(-1 * 20px); margin-right: calc(-1 * 20px); width: calc(100% + 2 * 20px);"><div style="position: relative; z-index: 2;"><div style="background-color: #1e1e2e; padding: 32px; border-radius: 16px; text-align: center; animation: fadeIn 0.6s ease-out forwards;">
+        <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #a600ff20, #a600ff40); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10" stroke="#a600ff" stroke-width="2"></polyline>
+          </svg>
+        </div>
+        <h3 style="font-size: 24px; font-weight: 700; color: #ffffff; margin-bottom: 16px;">Garantia de 7 Dias</h3>
+        <p style="font-size: 14px; color: #ffffff; opacity: 0.8; margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.6;">Se você não ficar 100% satisfeito com o acesso, devolvemos seu dinheiro integralmente em até 7 dias após a compra.</p>
+        <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+          
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span style="font-size: 14px; color: #ffffff;">Sem burocracia</span>
+        </div>
+      
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span style="font-size: 14px; color: #ffffff;">Devolução imediata</span>
+        </div>
+      
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span style="font-size: 14px; color: #ffffff;">Sem perguntas</span>
+        </div>
+      
+        </div>
+      </div></div></div>
+        <div class="section" style="position: relative; background-color: #0f0f1a; padding-top: 40px; padding-bottom: 60px; padding-left: 20px; padding-right: 20px; margin-left: calc(-1 * 20px); margin-right: calc(-1 * 20px); width: calc(100% + 2 * 20px);"><div style="position: relative; z-index: 2;"><div style="background-color: #1e1e2e; padding: 24px; border-radius: 16px; animation: fadeIn 0.6s ease-out forwards;">
+        <h3 style="font-size: 24px; font-weight: 700; color: #ffffff; margin-bottom: 24px; text-align: center;">Perguntas Frequentes</h3>
+        
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0;">
+          <button onclick="(function(){var c=document.getElementById('faq_q6ttloz9z_0');c.style.display=c.style.display==='none'?'block':'none';var i=document.getElementById('faq_q6ttloz9z_icon_0');i.style.transform=c.style.display==='none'?'rotate(0deg)':'rotate(180deg)';})();" style="width: 100%; padding: 20px 0; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left;">
+            <span style="font-size: 16px; font-weight: 500; color: #ffffff;">Como funciona o acesso?</span>
+            <svg id="faq_q6ttloz9z_icon_0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2" style="transition: transform 0.3s; flex-shrink: 0;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="faq_q6ttloz9z_0" style="display: none; padding: 0 0 20px 0;">
+            <p style="font-size: 14px; color: #ffffff; opacity: 0.8; line-height: 1.6; margin: 0;">Após a confirmação do pagamento, você receberá imediatamente os dados de acesso por e-mail e WhatsApp. Basta fazer login e começar a assistir!</p>
+          </div>
+        </div>
+      
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0;">
+          <button onclick="(function(){var c=document.getElementById('faq_q6ttloz9z_1');c.style.display=c.style.display==='none'?'block':'none';var i=document.getElementById('faq_q6ttloz9z_icon_1');i.style.transform=c.style.display==='none'?'rotate(0deg)':'rotate(180deg)';})();" style="width: 100%; padding: 20px 0; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left;">
+            <span style="font-size: 16px; font-weight: 500; color: #ffffff;">Posso assistir em quantos dispositivos?</span>
+            <svg id="faq_q6ttloz9z_icon_1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2" style="transition: transform 0.3s; flex-shrink: 0;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="faq_q6ttloz9z_1" style="display: none; padding: 0 0 20px 0;">
+            <p style="font-size: 14px; color: #ffffff; opacity: 0.8; line-height: 1.6; margin: 0;">Você pode assistir em até 3 dispositivos simultaneamente: celular, tablet, computador ou TV.</p>
+          </div>
+        </div>
+      
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0;">
+          <button onclick="(function(){var c=document.getElementById('faq_q6ttloz9z_2');c.style.display=c.style.display==='none'?'block':'none';var i=document.getElementById('faq_q6ttloz9z_icon_2');i.style.transform=c.style.display==='none'?'rotate(0deg)':'rotate(180deg)';})();" style="width: 100%; padding: 20px 0; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left;">
+            <span style="font-size: 16px; font-weight: 500; color: #ffffff;">O pagamento é recorrente?</span>
+            <svg id="faq_q6ttloz9z_icon_2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2" style="transition: transform 0.3s; flex-shrink: 0;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="faq_q6ttloz9z_2" style="display: none; padding: 0 0 20px 0;">
+            <p style="font-size: 14px; color: #ffffff; opacity: 0.8; line-height: 1.6; margin: 0;">Não! O pagamento é único. Você paga uma vez e tem acesso pelo tempo do plano escolhido.</p>
+          </div>
+        </div>
+      
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0;">
+          <button onclick="(function(){var c=document.getElementById('faq_q6ttloz9z_3');c.style.display=c.style.display==='none'?'block':'none';var i=document.getElementById('faq_q6ttloz9z_icon_3');i.style.transform=c.style.display==='none'?'rotate(0deg)':'rotate(180deg)';})();" style="width: 100%; padding: 20px 0; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left;">
+            <span style="font-size: 16px; font-weight: 500; color: #ffffff;">E se eu não gostar?</span>
+            <svg id="faq_q6ttloz9z_icon_3" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a600ff" stroke-width="2" style="transition: transform 0.3s; flex-shrink: 0;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="faq_q6ttloz9z_3" style="display: none; padding: 0 0 20px 0;">
+            <p style="font-size: 14px; color: #ffffff; opacity: 0.8; line-height: 1.6; margin: 0;">Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos 100% do seu dinheiro, sem perguntas.</p>
+          </div>
+        </div>
+      
+      </div></div></div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
